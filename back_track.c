@@ -4,14 +4,14 @@
 
 typedef struct n
 {
-	int n;		                                 		 //¼¯×°ÏäÊıÁ¿
-	int w[NUM];                              			 //¼¯×°ÏäÖØÁ¿
-	int x[NUM];                                    		 //¼¯×°Ïä²Ù×÷
-	int v[NUM];                          				 //¼¯×°Ïä¼ÛÖµ
-	int c;                                          	 //±³°ü³ĞÊÜÁ¿
-	int cw;                                          	 //±³°üµ±Ç°ÖØÁ¿ 
-	int bestvalue;                                   	 //µ±Ç°×îÓÅ¼ÛÖµ 
-	int value;                                       	 //µ±Ç°¼ÛÖµ 
+	int n;		                                 	//é›†è£…ç®±æ•°é‡
+	int w[NUM];                              		//é›†è£…ç®±é‡é‡
+	int x[NUM];                                    		//é›†è£…ç®±æ“ä½œ
+	int v[NUM];                          			//é›†è£…ç®±ä»·å€¼
+	int c;                                          	//èƒŒåŒ…æ‰¿å—é‡
+	int cw;                                          	//èƒŒåŒ…å½“å‰é‡é‡ 
+	int bestvalue;                                   	//å½“å‰æœ€ä¼˜ä»·å€¼ 
+	int value;                                       	//å½“å‰ä»·å€¼ 
 }node;
 
 void backtrack(int t,node no);
@@ -31,7 +31,7 @@ node init()
 {
 	int i;
 	node no;
-	no.n = NUM;		                                    //¼¯×°ÏäÊıÁ¿
+	no.n = NUM;		                                    //é›†è£…ç®±æ•°é‡
 	int w[NUM] = {7,3,4,5};                         
 	int x[NUM] = {0};      
 	int v[NUM] = {42,12,40,25}; 
@@ -41,10 +41,10 @@ node init()
 		no.x[i] = x[i];
 		no.v[i] = v[i];
 	}
-	no.cw = 0;                                          //±³°üµ±Ç°ÖØÁ¿ 
-	no.c = 10;                                          //±³°ü³ĞÊÜÁ¿ 
-	no.bestvalue = 0;                                   //µ±Ç°×îÓÅ¼ÛÖµ 
-	no.value = 0;                                       //µ±Ç°¼ÛÖµ 
+	no.cw = 0;                                          //èƒŒåŒ…å½“å‰é‡é‡ 
+	no.c = 10;                                          //èƒŒåŒ…æ‰¿å—é‡ 
+	no.bestvalue = 0;                                   //å½“å‰æœ€ä¼˜ä»·å€¼ 
+	no.value = 0;                                       //å½“å‰ä»·å€¼ 
 	return no;
 }
 
@@ -104,6 +104,6 @@ void output(node no)
 	{
 		printf("   %d  ",no.x[i]);
 	}
-	printf("    ×îÓÅ½â: %d  ",no.bestvalue);
+	printf("    æœ€ä¼˜è§£: %d  ",no.bestvalue);
 	printf("\n");
 }
